@@ -1,0 +1,7 @@
+fastapi==0.128.0
+pydantic==2.12.5
+pdfplumber==0.11.9
+pandas
+openpyxl
+python-dotenv
+google-genai

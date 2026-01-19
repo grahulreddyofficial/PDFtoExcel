@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>pdftoexcel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+        let angle = 0;
+        setInterval(() => {
+            angle = (angle + 1) % 360;
+            document.body.style.background = `
+            linear-gradient(
+                ${angle}deg,
+                rgba(240, 108, 216, 1) 0%,
+                rgba(87, 150, 199, 1) 50%,
+                rgba(165, 83, 237, 1) 100%
+            )
+            `;
+        }, 30);
+    </script>
+  </body>
+</html>

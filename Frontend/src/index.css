@@ -1,0 +1,139 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+  font-weight: 450;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background: #f06cd8;
+  background: linear-gradient(
+    0deg, 
+    rgba(240, 108, 216, 1) 0%, 
+    rgba(87, 150, 199, 1) 50%, 
+    rgba(165, 83, 237, 1) 100%
+    );
+    background-attachment: fixed;
+}
+#root {
+  min-height: 100vh;
+}
+@font-face {
+  font-family: 'Samarkan';
+  src: url('../src/fonts/samarkan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.header{
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+.m-bar{
+  width: 75%;
+  margin: auto;
+  /* background-color: aqua; */
+}
+.m-h1{
+  font-size: 2.25rem;
+  font-family: 'Samarkan';
+  letter-spacing: 1px;
+}
+.intro{
+  text-align: center;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 2.5rem;
+}
+.main{
+  width: 75%;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  .main{
+    width: 95%;
+  }
+}
+.msg-box{
+  display: flex;
+  /* background-color: aquamarine; */
+  overflow-y: auto;
+  margin: 10px auto;
+  width: 100%;
+  height: calc(100vh - 250px);
+  flex-direction: column;
+}
+.user-msg{
+  align-self: flex-end;
+  background-color: rgb(61, 42, 42);
+  padding: 12px;
+  max-width: 60%;
+  float: right;
+  margin: 6px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+.ai-response{
+  align-self: flex-start;
+  padding: 12px;
+  max-width: 100%;
+  float: left;
+  margin: 6px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+.footer{
+  width: 100%;
+  padding: 12px;
+  justify-content: center; 
+  box-sizing: border-box;
+}
+.footer-inner {
+  width: 75%;
+  display: block;
+  align-items: center;
+  gap: 8px;
+}
+@media screen and (max-width: 600px) {
+  .footer-inner{
+    width: 100%;
+  }
+}
+ .uq-back {
+  padding: 10px;
+  border-radius: 20px;
+  width: 75%; /* Set width on container */
+  margin: auto;
+}
+#user-query {
+  outline: none;
+  display: block;
+  width: 100%; /* Fill the container */
+  min-height: 80px;
+  padding: 12px;
+  resize: none;
+  border-radius: 16px;
+  border: 2px solid #d0d0e8;
+  background: white;
+  font-family: inherit;
+  box-sizing: border-box; /* Important! Includes padding in width calculation */
+}
+.send-btn {
+  display: flex;
+  margin: auto;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer;
+  background: #ffffff; 
+  color: rgb(0, 0, 0); 
+  font-size: 16px;
+}

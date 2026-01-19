@@ -1,0 +1,12 @@
+# Environment Variables
+.env
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
