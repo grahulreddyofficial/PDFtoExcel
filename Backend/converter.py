@@ -5,13 +5,14 @@ from openpyxl.styles import Font, Alignment, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
 from pathlib import Path
 
-exports_dir = Path("exports")
+EXPORT_DIR = Path("/tmp/exports")
+EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
 def formatter(id, response_text):
     data = response_text
     df = pd.DataFrame(data)
 
-    output_dir = exports_dir / id
+    output_dir = EXPORT_DIR / id
     os.makedirs(output_dir, exist_ok=True)
 
     file_name = os.path.join(output_dir, "generated_excel_sheet.xlsx")
