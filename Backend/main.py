@@ -14,6 +14,7 @@ app = FastAPI()
 
 origins = [
     "https://pdftoexcel-one.vercel.app",
+    "https://pdftoexcel-sfij.onrender.com",
     ]
 
 app.add_middleware(
