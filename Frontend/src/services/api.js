@@ -26,7 +26,7 @@ export async function Download(sessionId) {
   const a = document.createElement("a");
 
   a.href = url;
-  a.download = "converted.xlsx"; // filename
+  a.download = "generated_excel.xlsx"; // filename
   document.body.appendChild(a);
   a.click();
 
