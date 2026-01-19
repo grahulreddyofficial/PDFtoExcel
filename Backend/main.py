@@ -13,7 +13,7 @@ import converter
 app = FastAPI()
 
 origins = [
-    "https://pdftoexcel-sfij.onrender.com",
+    "https://pdftoexcel-one.vercel.app",
     ]
 
 app.add_middleware(
