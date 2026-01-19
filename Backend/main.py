@@ -13,9 +13,7 @@ import converter
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173",
-    "http://localhost",
-    "http://localhost:8080",
+    "https://pdftoexcel-sfij.onrender.com/",
     ]
 
 app.add_middleware(
