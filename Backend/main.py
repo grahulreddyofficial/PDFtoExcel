@@ -73,7 +73,4 @@ async def create_file(
 async def dwnld(id: str):
     FILE_PATH = EXPORT_DIR / id / "generated_excel_sheet.xlsx"
 
-    if not FILE_PATH.exists():
-        raise HTTPException(status_code=404, detail="File not found")
-
     return FileResponse(path=FILE_PATH, filename="generated_excel_sheet.xlsx", media_type='application/octet-stream')
