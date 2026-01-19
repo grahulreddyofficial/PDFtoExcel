@@ -25,7 +25,10 @@ app.add_middleware(
     allow_headers=["*"],            # Allow all headers
 )
 
-UPLOAD_DIR = Path("uploads")
+UPLOAD_DIR = Path("/tmp/uploads")
+EXPORT_DIR = Path("/tmp/exports")
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
 @app.get('/')
 async def home():
@@ -64,6 +67,6 @@ async def create_file(query: Annotated[str, Form()], files: list[UploadFile]):
 
 @app.get("/{id}/download")
 async def dwnld(id: str):
-    FILE_PATH = Path(f"exports/{id}/generated_excel_sheet.xlsx")
+    FILE_PATH = EXPORT_DIR / id / "generated_excel_sheet.xlsx"
 
     return FileResponse(path=FILE_PATH, filename="generated_excel_sheet.xlsx", media_type='application/octet-stream')
