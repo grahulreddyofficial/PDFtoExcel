@@ -38,7 +38,10 @@ async def home():
      }
 
 @app.post('/doc-upload')
-async def create_file(query: Annotated[str, Form()], files: list[UploadFile]):
+async def create_file(
+    query: Annotated[str, Form()],
+    files: list[UploadFile] = File(...)
+):
         pdf_text = ""
         id = str(uuid.uuid4())
         save_dir = UPLOAD_DIR / id
@@ -69,5 +72,8 @@ async def create_file(query: Annotated[str, Form()], files: list[UploadFile]):
 @app.get("/{id}/download")
 async def dwnld(id: str):
     FILE_PATH = EXPORT_DIR / id / "generated_excel_sheet.xlsx"
+
+    if not FILE_PATH.exists():
+        raise HTTPException(status_code=404, detail="File not found")
 
     return FileResponse(path=FILE_PATH, filename="generated_excel_sheet.xlsx", media_type='application/octet-stream')
