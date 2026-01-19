@@ -10,3 +10,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# Files
+Backend/uploads/
+Backend/exports/
