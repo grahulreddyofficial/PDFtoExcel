@@ -49,7 +49,7 @@ async def create_file(query: Annotated[str, Form()], files: list[UploadFile]):
                 f.write(await file.read())
             # Extracting Text from PDF Files
             text = ""
-            with pdfplumber.open(f"uploads/{id}/{file.filename}") as pdf:
+            with pdfplumber.open(f"/tmp/uploads/{id}/{file.filename}") as pdf:
                 for page in pdf.pages:
                     page_text = page.extract_text()
                     if page_text:
