@@ -45,11 +45,12 @@ async def create_file(query: Annotated[str, Form()], files: list[UploadFile]):
         save_dir.mkdir(parents=True, exist_ok=True)
         for file in files:
             # Saving Uploaded FIles
-            with open(f"uploads/{id}/{file.filename}", "wb") as f:
+            file_path = save_dir / file.filename
+            with open(file_path, "wb") as f:
                 f.write(await file.read())
             # Extracting Text from PDF Files
             text = ""
-            with pdfplumber.open(f"/tmp/uploads/{id}/{file.filename}") as pdf:
+            with pdfplumber.open(file_path) as pdf:
                 for page in pdf.pages:
                     page_text = page.extract_text()
                     if page_text:
