@@ -5,9 +5,20 @@ import { useState } from "react";
 function QueryBox() {
   const [status, setStatus] = useState("idle");
 
+  window.onload = function() {
+  const res = fetch(
+    "https://pdftoexcel-sfij.onrender.com/"
+  );
+  if (!res.ok) {
+    setStatus("ServerNotActive");
+  }
+  else if(res.ok){
+    setStatus("ServerActive");
+  }
+}
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
 
     setStatus("loading");
@@ -34,6 +45,8 @@ function QueryBox() {
           <button type="submit" className="send-btn" id="send-query" disabled={status === "loading"}>
               <ConverterIcon width="35px" height="35px" className="convert-icon"/>
               {status === "idle" && "Convert To Excel"}
+              {status === "ServerNotActive" && "Server Activating Wait 50 seconds!!!"}
+              {status === "ServerActive" && "Convert To Excel"}
               {status === "loading" && "Generating..."}
               {status === "generated" && "Download"}
               {status === "error" && "Failed ❌"}
