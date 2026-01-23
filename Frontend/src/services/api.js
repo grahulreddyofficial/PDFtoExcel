@@ -1,5 +1,5 @@
 export async function SendQuery(formData) {
-  const res = await fetch("https://pdftoexcel-sfij.onrender.com/doc-upload", {
+  const res = await fetch("https://api.pdftoexcel.space/doc-upload", {
     method: "POST",
     body: formData
   });
@@ -13,7 +13,7 @@ export async function SendQuery(formData) {
 
 export async function Download(sessionId) {
   const res = await fetch(
-    `https://pdftoexcel-sfij.onrender.com/${sessionId}/download`
+    `https://api.pdftoexcel.space/${sessionId}/download`
   );
 
   if (!res.ok) {
