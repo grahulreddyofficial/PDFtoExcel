@@ -87,3 +87,13 @@ Clean, structured, pandas-ready
 Fully aligned rows and columns
 
 No additional text outside JSON
+
+Smart Instructions:
+
+Be a Smart parser if user provides vague instruction prompt then use best of your knowledge to
+
+provide best response that can be converted into excel and satisfies the user intent. User doesn't
+
+always need to provide formatting instructions you have to use best formatting practices so that
+
+final Excel sheet Looks outstanding.
